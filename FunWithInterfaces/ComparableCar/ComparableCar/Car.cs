@@ -4,7 +4,7 @@ using System.Collections;
 
 namespace ComparableCar
 {
-    class Car //: IComparable<Car>
+    class Car : IComparable<Car>
     {
         public int ID { get; set; }
         public int Speed { get; set; }
@@ -13,10 +13,10 @@ namespace ComparableCar
         {
             return String.Format("ID: {0,3} Marka: {1,-7} Speed: {2,3}", ID, Marka, Speed);
         }
-
-        //public int CompareTo(Car obj)
-        //{
-        //    return this.ID - obj.ID;
-        //}
+        // privilege of generic IComparable is none Cust argument
+        public int CompareTo(Car obj)
+        {
+            return this.ID - obj.ID;
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace ComparableCar
 {
@@ -23,7 +24,7 @@ namespace ComparableCar
                 Console.WriteLine(c);
 
             // Now, sort them using IComparable!
-            //Array.Sort(myAutos);
+            Array.Sort(myAutos);
 
             // Dump sorted array.
             Console.WriteLine("\nHere is the ordered set of cars:");
@@ -31,8 +32,11 @@ namespace ComparableCar
                 Console.WriteLine(c);
 
             // Now sort by marka.
+            
             //Array.Sort(myAutos, Car.SortByMarka);
             //Array.Sort(myAutos, new MarkaComparer());
+
+            // We can use delegates that Sort without implimenting the IComparable
             Array.Sort(myAutos, delegate (Car x, Car y) { return x.Marka.CompareTo(y.Marka);});
             
             // Dump sorted array.
@@ -43,7 +47,12 @@ namespace ComparableCar
             // sort by speed
             Console.WriteLine("\nOrdering by speed");
             //Array.Sort(myAutos, Car.SortBySpeed);
-            foreach (Car c in myAutos)
+
+
+            // Sort by Speed with lambda expration
+            Array.Sort(myAutos, (x, y) => x.Speed.CompareTo(y.Speed));
+            
+            foreach (Car c in myAutos.OrderBy(x => x.ID))
                 Console.WriteLine(c);
             Console.ReadLine();
         }
