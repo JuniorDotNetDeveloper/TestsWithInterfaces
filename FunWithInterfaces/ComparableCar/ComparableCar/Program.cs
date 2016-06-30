@@ -38,6 +38,11 @@ namespace ComparableCar
             foreach (Car c in myAutos)
                 Console.WriteLine(c);
 
+            // sort by speed
+            Console.WriteLine("\nOrdering by speed");
+            Array.Sort(myAutos, Car.SortBySpeed);
+            foreach (Car c in myAutos)
+                Console.WriteLine(c);
             Console.ReadLine();
         }
     }

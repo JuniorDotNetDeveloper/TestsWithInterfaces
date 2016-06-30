@@ -13,9 +13,12 @@ namespace ComparableCar
         {
             return String.Format("ID: {0,3} Marka: {1,-7} Speed: {2,3}", ID, Marka, Speed);
         }
+
         public static IComparer SortByMarka
         { get { return (IComparer)new MarkaComparer(); } }
 
+        public static IComparer SortBySpeed
+        { get { return new SpeedComparer(); } }
 
         public int CompareTo(object obj)
         {
