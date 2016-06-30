@@ -49,6 +49,8 @@ namespace FunWithInterfaces
             Console.WriteLine("===========================================================");
             Console.WriteLine("===========================================================");
 
+
+
             for (int i = 0; i < s.Length; i++)
             {
                 // Recall the Shape base class defines an abstract Draw() member,
