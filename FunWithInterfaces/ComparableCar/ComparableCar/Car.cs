@@ -4,7 +4,7 @@ using System.Collections;
 
 namespace ComparableCar
 {
-    class Car : IComparable
+    class Car //: IComparable<Car>
     {
         public int ID { get; set; }
         public int Speed { get; set; }
@@ -14,21 +14,9 @@ namespace ComparableCar
             return String.Format("ID: {0,3} Marka: {1,-7} Speed: {2,3}", ID, Marka, Speed);
         }
 
-        public static IComparer SortByMarka
-        { get { return (IComparer)new MarkaComparer(); } }
-
-        public static IComparer SortBySpeed
-        { get { return new SpeedComparer(); } }
-
-        public int CompareTo(object obj)
-        {
-            Car temp = (Car)obj;
-            if (this.ID > temp.ID)
-                return 1;
-            if (this.ID < temp.ID)
-                return -1;
-            else
-                return 0;
-        }
+        //public int CompareTo(Car obj)
+        //{
+        //    return this.ID - obj.ID;
+        //}
     }
 }

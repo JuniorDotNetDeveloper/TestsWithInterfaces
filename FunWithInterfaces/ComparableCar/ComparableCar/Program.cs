@@ -23,7 +23,7 @@ namespace ComparableCar
                 Console.WriteLine(c);
 
             // Now, sort them using IComparable!
-            Array.Sort(myAutos);
+            //Array.Sort(myAutos);
 
             // Dump sorted array.
             Console.WriteLine("\nHere is the ordered set of cars:");
@@ -31,8 +31,10 @@ namespace ComparableCar
                 Console.WriteLine(c);
 
             // Now sort by marka.
-            Array.Sort(myAutos, Car.SortByMarka);
-
+            //Array.Sort(myAutos, Car.SortByMarka);
+            //Array.Sort(myAutos, new MarkaComparer());
+            Array.Sort(myAutos, delegate (Car x, Car y) { return x.Marka.CompareTo(y.Marka);});
+            
             // Dump sorted array.
             Console.WriteLine("\nOrdering by marka:");
             foreach (Car c in myAutos)
@@ -40,7 +42,7 @@ namespace ComparableCar
 
             // sort by speed
             Console.WriteLine("\nOrdering by speed");
-            Array.Sort(myAutos, Car.SortBySpeed);
+            //Array.Sort(myAutos, Car.SortBySpeed);
             foreach (Car c in myAutos)
                 Console.WriteLine(c);
             Console.ReadLine();
