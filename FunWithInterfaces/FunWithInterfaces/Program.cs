@@ -32,6 +32,23 @@ namespace FunWithInterfaces
         {
             Shape[] s = { new Hexagon(), new Circle(), new Triangle("Trident"),
               new Circle("Ring")};
+
+
+            
+            Console.WriteLine("\n===========================================================");
+            Console.WriteLine("===========================================================");
+
+            Hexagon testHexagon = new Hexagon();  // my changes create new obj for test with explicied implimentes Interface..
+            IDraw3D Qdraw3D = testHexagon;
+            Qdraw3D.Draw();
+            DrawIn3D(testHexagon);
+            testHexagon.Draw();
+            IDraw3D draw3D = testHexagon;
+            draw3D.Draw();
+
+            Console.WriteLine("===========================================================");
+            Console.WriteLine("===========================================================");
+
             for (int i = 0; i < s.Length; i++)
             {
                 // Recall the Shape base class defines an abstract Draw() member,

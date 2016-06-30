@@ -29,7 +29,7 @@ namespace FunWithInterfaces.Models
         // to provide distinct Draw() implementations.
         void IDraw3D.Draw()
         {
-            { Console.WriteLine("Drawing Hexagon in 3D!"); }
+             Console.WriteLine("Drawing Hexagon in 3D!"); 
         }
 
         #endregion
