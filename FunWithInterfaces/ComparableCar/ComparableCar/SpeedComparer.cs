@@ -13,12 +13,7 @@ namespace ComparableCar
         {
             Car c1 = (Car)x;
             Car c2 = (Car)y;
-            if (c1.Speed > c2.Speed)
-                return 1;
-            if (c1.Speed < c2.Speed)
-                return -1;
-            else
-                return 0;
+            return c1.Speed - c2.Speed;
         }
     }
 }
